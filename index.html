@@ -289,7 +289,7 @@
             <div style="display:flex;gap:14px;align-items:flex-end;margin-bottom:4px;">
               <div>
                 <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:3px;">Model</div>
-                <div class="d-card-val" id="dOverallRank" style="color:var(--accent);font-size:32px;display:none">—</div>
+                <div class="d-card-val" id="dOverallRank" style="color:var(--accent);font-size:32px">—</div>
               </div>
               <div>
                 <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:3px;">PFF</div>
@@ -730,6 +730,7 @@ function selectPlayer(name){
   vBadge.textContent = vb.text;
   vBadge.style.color = vb.col;
   vBadge.style.background = vb.bg;
+  document.getElementById('dOverallRank').textContent='#'+(p.model_overall_rank||'—');
   document.getElementById('dOverallPffRank').textContent='#'+p.pff_rank;
   document.getElementById('dPredPPG').textContent=(p.predicted_max_ppg||0).toFixed(1);
   const pu=document.getElementById('dPredUseful');
